@@ -1,24 +1,58 @@
-import logo from './logo.svg';
 import './App.css';
+import TodoAdd from './Components/TodoAdd/TodoAdd';
+import TodoHeader from './Components/TodoHeader/TodoHeader';
+import TodoList from './Components/TodoList/TodoList';
+import React,{useEffect, useState, useRef} from 'react'
+import * as THREE from 'three'
+import NET from 'vanta/dist/vanta.clouds.min'
 
 function App() {
+  const [todoName, setTodoName] = useState("");
+  const [todoArr, setTodoArr] = useState([]);
+  const [status, setStatus] = useState("all");
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const myRef = useRef(null);
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(NET({
+        el: myRef.current,
+        THREE: THREE,
+        maxDistance: 22.00,
+        points: 20.00,
+      }))
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy()
+    }
+  }, [vantaEffect]);
+
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(todoArr));
+    localStorage.setItem('todoName', JSON.stringify(todoName))
+  }, [todoArr, todoName]);
+
+
+  useEffect(() => {
+    setTodoArr(JSON.parse(localStorage.getItem('array')))
+  }, []);
+
+  useEffect(()=>{
+    localStorage.setItem('array', JSON.stringify(todoArr))
+  }, [todoArr])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <div ref={myRef} className="vanta">
+
+        </div>
+        <div className="content">
+          <TodoHeader />
+          <TodoAdd todoName={todoName} setTodoName={setTodoName} todoArr={todoArr} setTodoArr={setTodoArr} status={status} setStatus={setStatus} />
+          <TodoList todoArr={todoArr} setTodoArr={setTodoArr} todoName={todoName} setTodoName={setTodoName} status={status} setStatus={setStatus} />
+        </div>
+      </>
   );
 }
 

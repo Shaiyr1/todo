@@ -1,0 +1,15 @@
+.todoFooter {
+    padding-bottom: 10px;
+    &__titles {
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__btns {
+        margin: 0 auto;
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

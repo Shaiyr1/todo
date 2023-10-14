@@ -1,0 +1,36 @@
+.todolist {
+    margin: 0 auto;
+}
+h3 {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+ul {
+    background-color: rgb(160, 255, 255);
+
+    // width: 600px;
+    list-style-type: none;
+}
+.li {
+
+    display: flex;
+    justify-content: space-between;
+}
+.li+.active {
+
+    background-color: greenyellow;
+}
+.active {
+    background-color: greenyellow;
+}
+.change {
+    background-color: red;
+}
+
+button {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(255, 185, 98);
+}

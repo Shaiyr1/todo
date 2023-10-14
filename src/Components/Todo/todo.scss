@@ -1,0 +1,68 @@
+.todo {
+    padding-top: 20px;
+
+    &__progress {
+        padding-top: 10px;
+
+        &_title {
+            margin-top: 0px;
+        }
+    }
+
+    &__ul {
+        margin-top: 0;
+        width: 89%;
+
+        &_li {
+            width: 100%;
+            margin-bottom: 5px;
+            padding: 5px;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+
+        }
+
+        &_btns {
+            width: 44%;
+            display: flex;
+            justify-content: flex-end;
+            &-btn {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+.delete {
+    background-color: red;
+}
+.important {
+    color: red;
+    border: 1px solid red;
+}
+
+@media (max-width: 768px) {
+    .todo__ul {
+        margin-top: 0;
+        width: 86%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .todo {
+        padding-top: 12px;
+
+        &__ul {
+            width: 78%;
+            margin-bottom: 0px;
+            margin-top: 0;
+
+            &_btns {
+                width: 67%;
+            }
+        }
+    }
+}
