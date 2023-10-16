@@ -1,28 +1,27 @@
 .todolist {
     margin: 0 auto;
 }
+
 h3 {
     margin-top: 0px;
     padding-top: 20px;
 }
-ul {
-    background-color: rgb(160, 255, 255);
 
-    // width: 600px;
+ul {
     list-style-type: none;
 }
+
 .li {
 
     display: flex;
     justify-content: space-between;
 }
-.li+.active {
 
-    background-color: greenyellow;
-}
+
 .active {
-    background-color: greenyellow;
+    background-color: rgb(137, 206, 236);
 }
+
 .change {
     background-color: red;
 }
@@ -33,4 +32,16 @@ button {
     border-radius: 5px;
     color: white;
     background-color: rgb(255, 185, 98);
+}
+
+
+@media (max-width: 480px) {
+    h3 {
+        font-size: 15px;
+    }
+}
+@media (max-width: 370px) {
+    h3 {
+        font-size: 10px;
+    }
 }

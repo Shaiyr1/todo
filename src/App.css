@@ -15,7 +15,7 @@
   width: 670px;
   margin: 0 auto;
   text-align: center;
-  background-color: rgb(160, 255, 255);
+  background-color: rgb(61, 169, 212);
 
 }
 
@@ -46,6 +46,7 @@
   .container {
     width: 350px;
   }
+
   li {
     font-size: 10px;
   }
@@ -59,8 +60,29 @@
   }
 
   button {
-    
-    font-size: 7px;
+
+    font-size: 10px;
   }
 
+}
+
+@media (max-width: 370px) {
+  .container {
+    width: 270px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  button {
+    padding: 4px !important;
+    font-size: 9px;
+  }
+  li {
+    font-size: 10px;
+}
+  input {
+    font-size: 10px;
+  }
 }

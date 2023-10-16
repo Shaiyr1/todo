@@ -36,16 +36,6 @@ function Todo({ todoArr, setTodoArr, status, setStatus }) {
     };
 
     const deleted = (id) => {
-        // setTodoArr(todoArr.map((item) => {
-        //     if (item.id === id) {
-        //         return {
-        //             ...item,
-        //             isDeleted: true,
-        //         };
-        //     } else {
-        //         return item;
-        //     }
-        // }));
         setTodoArr(
             todoArr.map((item) => {
                 if (item.id === id) {
@@ -58,15 +48,6 @@ function Todo({ todoArr, setTodoArr, status, setStatus }) {
     };
 
     const deliteToDo = (id) => {
-        // setTodoArr(
-        //     todoArr.map((item) => {
-        //         if (item.id === id) {
-        //             return { ...item, isDeleted: !item.isDeleted };
-        //         } else {
-        //             return item;
-        //         }
-        //     })
-        // );
         setTodoArr(todoArr.filter((item) => {
             return item.id !== id
         }))
@@ -153,7 +134,7 @@ function Todo({ todoArr, setTodoArr, status, setStatus }) {
                                             {status === 'reset'
                                                 ? ''
                                                 : <button className="todo__ul_btns-btn" onClick={() => completed(item.id)}>
-                                                    Выполнено {item.isCompleted ? "✘" : "✔"}
+                                                     {item.isCompleted ? "✘" : "✔"}
                                                 </button>
                                             }
                                             {status === 'reset'

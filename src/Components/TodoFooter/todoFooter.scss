@@ -13,3 +13,18 @@
         justify-content: space-between;
     }
 }
+
+@media (max-width: 370px) {
+    .todoFooter__btns {
+        margin: 0 auto;
+        width: 86%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .todoFooter__titles {
+        width: 74%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -41,6 +41,8 @@ function TodoAdd({ todoName, setTodoName, todoArr, setTodoArr, status, setStatus
                     }}
                     value={todoName}
                     disabled={status === "complite"}
+                  onKeyDown={(e) => (e.code === "Enter" ? addTodoArr(todoName) : "")}
+
                 />
                 <button className='todoAdd__btn' onClick={() => {
                     addTodoArr(todoName)

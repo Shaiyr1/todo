@@ -11,13 +11,13 @@
 
     &__ul {
         margin-top: 0;
-        width: 89%;
+        width: 87% !important;
 
         &_li {
             width: 100%;
             margin-bottom: 5px;
             padding: 5px;
-            background-color: aquamarine;
+            background-color: rgb(72, 180, 234);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,8 +39,8 @@
     background-color: red;
 }
 .important {
-    color: red;
-    border: 1px solid red;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
 }
 
 @media (max-width: 768px) {
@@ -64,5 +64,19 @@
                 width: 67%;
             }
         }
+    }
+}
+
+@media (max-width: 370px) {}
+    .todo__ul {
+    width: 79%;
+    margin: 0px auto;
+    padding-left: 0px;
+    &_li {
+        padding: 3px !important;
+    }
+
+    .todo__ul_btns-btn {
+        margin-right: 1px;
     }
 }
